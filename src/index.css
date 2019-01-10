@@ -6,9 +6,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 1000px;
+  margin: auto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+head img {
+  max-width: 100vw;
+}
+
+#characterCards div {
+  max-width: 225px;
+}
+
+div img {
+  max-width: 100%;
 }
