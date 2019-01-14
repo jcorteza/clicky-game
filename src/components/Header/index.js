@@ -51,7 +51,7 @@ class Header extends React.Component {
                 }
                 <div id="headerText" ref={(elem) => this.divRef = elem} style={(this.state.divWidth > 510)? divStyle: null}>
                     <h1>Cicky Game</h1>
-                    <p>Try your hand at funnest memory game you'll ever see. Start the game by clicking or tapping on a character card below.</p>
+                    <p>Try your hand at funnest memory game you'll ever see. Start the game by clicking or tapping on a character card below. Click on all 16 characters without any repeat clicks to win the game.</p>
                 </div>
             </header>
         );
