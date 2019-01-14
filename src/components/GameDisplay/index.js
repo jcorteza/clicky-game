@@ -3,6 +3,7 @@ import GameTracker from "../GameTracker";
 import CharacterCard from "../CharacterCard";
 import characters from "../characters.json";
 let thisArray = characters.adventureTime;
+let resultsText;
 
 class GameDisplay extends React.Component{
     constructor(props) {
@@ -14,9 +15,23 @@ class GameDisplay extends React.Component{
             score: 0,
             name: "",
             clickedArray: [],
-            arrayInUse: thisArray
+            arrayInUse: thisArray,
+            resultAlertStyle: {display: "none"}
         }
         this.handleClick = this.handleClick.bind(this);
+        this.result = this.result.bind(this);
+    }
+
+    result = function(win) {
+        if(win) {
+            resultsText = "Slam-bam-in-a-can! You're a winner!"
+        } else {
+            resultsText = "Dude, what the bjork? Try again next time."
+        }
+        this.setState({resultAlertStyle: null});
+        setTimeout(() => {
+            this.setState({resultAlertStyle: {display: "none"}});
+        }, 3000);
     }
     
     handleClick = (e) => {
@@ -32,12 +47,11 @@ class GameDisplay extends React.Component{
         if(this.state.clickedArray.includes(e.target.name)) {
             stateUpdate =  {
                 round: this.state.round + 1,
-                losses: this.state.round + 1
+                losses: this.state.round + 1,
+                score: 0,
+                clickedArray: []
             }
-            this.setState({
-                clickedArray: [],
-                score: 0
-            });
+            this.result(false);
         } else {
             this.setState((prevState) => ({
                 clickedArray: [...prevState.clickedArray, prevState.name]
@@ -45,16 +59,14 @@ class GameDisplay extends React.Component{
             stateUpdate =  {
                 score: this.state.score + 1
             }
-            if(this.state.clickedArray.length === this.state.arrayInUse.length) {
+            if([...this.state.clickedArray, e.target.name].length === this.state.arrayInUse.length) {
                 stateUpdate = {
-                    score: this.state.score + 1,
                     round: this.state.round + 1,
-                    wins: this.state.wins + 1
-                }
-                this.setState({
+                    wins: this.state.wins + 1,
                     clickedArray: [],
                     score: 0
-                });
+                }
+                this.result(true);
             }
         }
         this.setState(stateUpdate);
@@ -64,6 +76,7 @@ class GameDisplay extends React.Component{
         return(
             <main>
                 <GameTracker round={this.state.round} score={this.state.score} losses={this.state.losses} wins={this.state.wins}/>
+                <p className="resultAlert" style={this.state.resultAlertStyle}>{resultsText}</p>
                 <section id="characterCards">
                     {this.state.arrayInUse.map((character) => { 
                         return (<CharacterCard

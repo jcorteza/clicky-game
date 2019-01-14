@@ -50,6 +50,14 @@ h1, p {
   padding: 3vh 0;
 }
 
+.resultAlert {
+  font-weight: bold;
+  padding: 2vh;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 2vh 0;
+}
+
 @media screen and (min-width: 511px) {
   header p, header h1 {
     color: white;
