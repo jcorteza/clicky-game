@@ -1,22 +1,19 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 1000px;
-  margin: auto;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-head img {
-  max-width: 100vw;
+#characterCards {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
 }
 
 #characterCards div {
@@ -25,4 +22,45 @@ head img {
 
 div img {
   max-width: 100%;
+}
+
+header div {
+  margin: 1.5vh 0 5vh;
+}
+
+h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+#gameTracker {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e43d33;
+  border: 1px solid black;
+}
+
+#gameTracker div{
+  padding: 0 2vw;
+  height: 100%;
+  margin: auto;
+}
+
+#gameTracker div p {
+  padding: 3vh 0;
+}
+
+@media screen and (min-width: 511px) {
+  header p, header h1 {
+    color: white;
+    text-shadow: 5px 10px 20px black;
+    padding: 0 2vw;
+  }
+  header div {
+    margin: 0 0 2vh;
+  }
+  #characterCards {
+    padding: 1rem;
+    grid-gap: 2vw 2vw;
+  }
 }

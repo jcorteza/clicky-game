@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GameTracker(props) {
     return(
-        <section>
+        <section id="gameTracker">
             <div>
                 <p>Round: {props.round}</p>
             </div>
