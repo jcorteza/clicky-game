@@ -19,14 +19,14 @@ class GameDisplay extends React.Component{
         this.handleClick = this.handleClick.bind(this);
     }
     
-    handleClick(e){
+    handleClick = (e) => {
         e.preventDefault();
+        const newName = e.target.name;
         let stateUpdate;
-        console.log(e.target.name);
         this.setState(
             {
-                arrayInUse: thisArray.sort(() => 0.5 * Math.random()),
-                name: e.target.name
+                arrayInUse: thisArray.sort((a,b) => 0.5 - Math.random()),
+                name: newName
             }
         );
         if(this.state.clickedArray.includes(e.target.name)) {
@@ -65,15 +65,15 @@ class GameDisplay extends React.Component{
             <main>
                 <GameTracker round={this.state.round} score={this.state.score} losses={this.state.losses} wins={this.state.wins}/>
                 <section id="characterCards">
-                    {this.state.arrayInUse.map((character) => 
-                        <CharacterCard
+                    {this.state.arrayInUse.map((character) => { 
+                        return (<CharacterCard
                             image={require(`../../images/${character.image}`)} 
                             alt={character.alt} 
                             name={character.name} 
                             key={character.key}
                             handleClick={this.handleClick} 
-                        />
-                    )};
+                        />);
+                    })};
                 </section>
             </main>
         );
