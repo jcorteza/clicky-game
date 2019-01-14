@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/clicky-game/static/media/S4e14_just_Finn.bb1bde2e.png"
   },
   {
-    "revision": "b34070695e40922bf041",
+    "revision": "8bdcae86951a8d2121a2",
     "url": "/clicky-game/static/css/main.e51406de.chunk.css"
   },
   {
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/clicky-game/static/media/S2e1_Marceline_And_Her_Ax_Bass.768ff486.png"
   },
   {
-    "revision": "b34070695e40922bf041",
-    "url": "/clicky-game/static/js/main.b3407069.chunk.js"
+    "revision": "8bdcae86951a8d2121a2",
+    "url": "/clicky-game/static/js/main.8bdcae86.chunk.js"
   },
   {
     "revision": "14eaca096af62706ea2fb4476e53b15e",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/clicky-game/static/media/susan.5d08f133.png"
   },
   {
-    "revision": "43a4363a74cd1a8670e7db0f25690cfe",
+    "revision": "aff37a60a717a2a1ad4dca0014b4d6bb",
     "url": "/clicky-game/index.html"
   }
 ];
